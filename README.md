@@ -14,14 +14,16 @@ GFW 封锁了 HTTP/Socks5 代理，HTTP 代理是关键词过滤，Socks5 代理
 在 25 端口搭建 http/https 代理。
 
 
-Ubuntu: 
+Ubuntu（需要一行一行复制安装）:
 -------
-apt-get install squid
+apt-get -y install squid
 curl https://pac.itzmx.com/squid/ubuntu-squid.conf > /etc/squid3/squid.conf
-/etc/init.d/squid restart
+service squid3 restart
 
 
-CentOS:
+
+
+CentOS 6.7 x64（推荐用此系统）:
 -------
 setenforce 0
 ulimit -n 1048576
@@ -32,7 +34,7 @@ killall sendmail
 chkconfig --level 2345 postfix off
 yum -y install squid
 wget -O /etc/squid/squid.conf https://pac.itzmx.com/squid/centos-squid.conf
-/etc/init.d/squid restart
+service squid restart
 chkconfig --level 2345 squid on
 
 
