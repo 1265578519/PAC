@@ -54,3 +54,6 @@ chkconfig --level 2345 squid on
 
 Ubuntu 可以直接使用，centos需要发TK叫开mail端口
 搭配锐速效果更赞：http://bbs.itzmx.com/thread-7220-1-1.html
+
+捐赠：https://pac.itzmx.com/donate/index.html
+
