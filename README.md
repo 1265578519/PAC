@@ -29,14 +29,21 @@ setenforce 0
 ulimit -n 1048576
 echo "* soft nofile 1048576" >> /etc/security/limits.conf
 echo "* hard nofile 1048576" >> /etc/security/limits.conf
+echo "alias net-pf-10 off" >> /etc/modprobe.d/dist.conf
+echo "alias ipv6 off" >> /etc/modprobe.d/dist.conf
 killall sendmail
 /etc/init.d/postfix stop
 chkconfig --level 2345 postfix off
 yum -y install squid
 wget -O /etc/squid/squid.conf https://pac.itzmx.com/squid/centos-squid.conf
+mkdir -p /home/squid/tmp
+chmod -R 777 /home/squid/tmp
+squid -z
 service squid restart
 chkconfig --level 2345 squid on
 
+
+装完后记得reboot重启下服务器确保生效。
 
 然后使用 [PAC](https://pac.itzmx.com/abc.pac) 右键另存为 PAC 文件后修改其中的IP地址为你的服务器IP即可。
 
