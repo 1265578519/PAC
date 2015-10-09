@@ -36,9 +36,6 @@ killall sendmail
 chkconfig --level 2345 postfix off
 yum -y install squid
 wget -O /etc/squid/squid.conf https://pac.itzmx.com/squid/centos-squid.conf
-mkdir -p /home/squid/tmp
-chmod -R 777 /home/squid/tmp
-squid -z
 service squid restart
 chkconfig --level 2345 squid on
 
