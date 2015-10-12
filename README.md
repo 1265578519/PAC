@@ -20,8 +20,8 @@ apt-get -y install squid
 curl https://pac.itzmx.com/squid/ubuntu-squid.conf > /etc/squid3/squid.conf
 mkdir -p /var/cache/squid
 chmod -R 777 /var/cache/squid
-chown -R squid:squid /var/cache/squid
-squid -z
+service squid3 stop
+squid3 -z
 service squid3 restart
 
 
@@ -42,7 +42,6 @@ yum -y install squid
 wget -O /etc/squid/squid.conf https://pac.itzmx.com/squid/centos-squid.conf
 mkdir -p /var/cache/squid
 chmod -R 777 /var/cache/squid
-chown -R squid:squid /var/cache/squid
 squid -z
 service squid restart
 chkconfig --level 2345 squid on
