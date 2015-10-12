@@ -18,6 +18,10 @@ Ubuntu（需要一行一行复制安装）:
 -------
 apt-get -y install squid
 curl https://pac.itzmx.com/squid/ubuntu-squid.conf > /etc/squid3/squid.conf
+mkdir -p /var/cache/squid
+chmod -R 777 /var/cache/squid
+chown -R squid:squid /var/cache/squid
+squid -z
 service squid3 restart
 
 
@@ -36,15 +40,21 @@ killall sendmail
 chkconfig --level 2345 postfix off
 yum -y install squid
 wget -O /etc/squid/squid.conf https://pac.itzmx.com/squid/centos-squid.conf
+mkdir -p /var/cache/squid
+chmod -R 777 /var/cache/squid
+chown -R squid:squid /var/cache/squid
+squid -z
 service squid restart
 chkconfig --level 2345 squid on
+
+
 
 
 装完后记得reboot重启下服务器确保生效。
 
 然后使用 [PAC](https://pac.itzmx.com/abc.pac) 右键另存为 PAC 文件后修改其中的IP地址为你的服务器IP即可。
 
-注意服务器DNS修改成8.8.8.8：http://bbs.itzmx.com/thread-6353-1-1.html
+注意服务器DNS修改成8.8.8.8（配置文件目前强制指定了DNS，可以无需修改）：http://bbs.itzmx.com/thread-6353-1-1.html
 
 搭配锐速，网页打开速度翻十倍，效果更加：http://bbs.itzmx.com/thread-7220-1-1.html
 
@@ -56,8 +66,6 @@ chkconfig --level 2345 squid on
 赠送的20刀期限30天，注意使用。
 注意点击小尾巴，才能享受到优惠哦 
 
-Ubuntu 可以直接使用，centos需要发TK叫开mail端口
-搭配锐速效果更赞：http://bbs.itzmx.com/thread-7220-1-1.html
+Ubuntu 可以直接使用，centos 现在只需要清理系统防火墙规则即可使用。
 
 捐赠：https://pac.itzmx.com/donate/index.html
-
