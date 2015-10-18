@@ -3,6 +3,7 @@
 var proxy = "PROXY server01.pac.itzmx.com:25;";
 
 var domains = {
+  "onedrive.live.com": 1,
   "blogsmithmedia.com": 1,
   "keepvid.com": 1,
   "unblockdmm.com": 1,
