@@ -17,7 +17,7 @@ GFW 封锁了 HTTP/Socks5 代理，HTTP 代理是关键词过滤，Socks5 代理
 Ubuntu（需要一行一行复制安装）:
 -------
 apt-get -y install squid
-curl https://pac.itzmx.com/squid/ubuntu-squid.conf > /etc/squid3/squid.conf
+curl https://raw.githubusercontent.com/1265578519/PAC/master/squid/ubuntu-squid.conf > /etc/squid3/squid.conf
 mkdir -p /var/cache/squid
 chmod -R 777 /var/cache/squid
 service squid3 stop
@@ -39,7 +39,7 @@ killall sendmail
 /etc/init.d/postfix stop
 chkconfig --level 2345 postfix off
 yum -y install squid
-wget -O /etc/squid/squid.conf https://pac.itzmx.com/squid/centos-squid.conf
+wget -O /etc/squid/squid.conf https://raw.githubusercontent.com/1265578519/PAC/master/squid/centos-squid.conf
 mkdir -p /var/cache/squid
 chmod -R 777 /var/cache/squid
 squid -z
