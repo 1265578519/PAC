@@ -1,8 +1,10 @@
-// https://pac.itzmx.com
+// http://pac.itzmx.com
 
 var proxy = "PROXY server01.pac.itzmx.com:25;";
 
 var domains = {
+  "bbc.com": 1,
+  "ero-video.net": 1,
   "onedrive.live.com": 1,
   "blogsmithmedia.com": 1,
   "keepvid.com": 1,
