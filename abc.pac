@@ -3,6 +3,8 @@
 var proxy = "PROXY server01.pac.itzmx.com:25;";
 
 var domains = {
+  "archeage.jp": 1,
+  "blogspot.jp": 1,
   "bbc.com": 1,
   "ero-video.net": 1,
   "onedrive.live.com": 1,
