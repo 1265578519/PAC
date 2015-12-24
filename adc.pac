@@ -3,6 +3,7 @@
 var proxy = "PROXY server02.pac.itzmx.com:21;";
 
 var domains = {
+  "share.dmhy.org": 1,
   "archeage.jp": 1,
   "blogspot.jp": 1,
   "bbc.com": 1,
