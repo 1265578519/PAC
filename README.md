@@ -32,9 +32,9 @@ CentOS 6.7 x64（推荐用此系统）:
 -------
 ``` markdown
 setenforce 0
-ulimit -n 1048576
-echo "* soft nofile 1048576" >> /etc/security/limits.conf
-echo "* hard nofile 1048576" >> /etc/security/limits.conf
+ulimit -n 800000
+echo "* soft nofile 800000" >> /etc/security/limits.conf
+echo "* hard nofile 800000" >> /etc/security/limits.conf
 echo "alias net-pf-10 off" >> /etc/modprobe.d/dist.conf
 echo "alias ipv6 off" >> /etc/modprobe.d/dist.conf
 killall sendmail
