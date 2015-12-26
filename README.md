@@ -18,7 +18,7 @@ Ubuntu（需要一行一行复制安装）:
 -------
 ``` markdown
 apt-get -y install squid
-curl http://git.oschina.net/cc12655/PAC/raw/master/squid/ubuntu-squid.conf > /etc/squid3/squid.conf
+curl http://github.itzmx.com/1265578519/PAC/master/squid/ubuntu-squid.conf > /etc/squid3/squid.conf
 mkdir -p /var/cache/squid
 chmod -R 777 /var/cache/squid
 service squid3 stop
@@ -41,7 +41,7 @@ killall sendmail
 /etc/init.d/postfix stop
 chkconfig --level 2345 postfix off
 yum -y install squid wget
-wget http://git.oschina.net/cc12655/PAC/raw/master/squid/centos-squid.conf -O /etc/squid/squid.conf
+wget http://github.itzmx.com/1265578519/PAC/master/squid/centos-squid.conf -O /etc/squid/squid.conf
 mkdir -p /var/cache/squid
 chmod -R 777 /var/cache/squid
 squid -z
