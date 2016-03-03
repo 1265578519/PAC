@@ -526,6 +526,7 @@ var domains = {
   "djangosnippets.org": 1, 
   "dl-laby.jp": 1, 
   "dlsite.com": 1, 
+  "dlsite.jp": 1, 
   "dmcdn.net": 1, 
   "dns2go.com": 1, 
   "dnscrypt.org": 1, 

@@ -83,7 +83,7 @@ service iptables save
 
 
 推荐服务器：http://www.vultr.com/?ref=6813695
-优惠码：OWNCLOUD
+优惠码：OWNCLOUD SSDVPS
 赠送的20刀期限30天，注意使用。
 注意点击小尾巴，才能享受到优惠哦 
 
