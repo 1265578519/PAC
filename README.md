@@ -8,6 +8,10 @@ GFW 封锁了 HTTP/Socks5 代理，HTTP 代理是关键词过滤，Socks5 代理
 
 [这里](http://pac.itzmx.com/) 提供了我在 [vultr](http://pac.itzmx.com/abc.pac) 上搭建的公共代理。
 
+更新SQ防扫认证，登录信息为
+帐号：root
+密码：pac.itzmx.com
+
 
 搭建代理服务器
 ==============
@@ -19,6 +23,7 @@ Ubuntu（需要一行一行复制安装）:
 ``` markdown
 apt-get -y install squid
 curl http://github.itzmx.com/1265578519/PAC/master/squid/ubuntu-squid.conf > /etc/squid3/squid.conf
+echo "root:W10fM8VWO04aM" >> /etc/squid/passwd
 mkdir -p /var/cache/squid
 chmod -R 777 /var/cache/squid
 service squid3 stop
@@ -42,6 +47,7 @@ killall sendmail
 chkconfig --level 2345 postfix off
 yum -y install squid wget
 wget http://github.itzmx.com/1265578519/PAC/master/squid/centos-squid.conf -O /etc/squid/squid.conf
+echo "root:W10fM8VWO04aM" >> /etc/squid/passwd
 mkdir -p /var/cache/squid
 chmod -R 777 /var/cache/squid
 squid -z
@@ -73,11 +79,7 @@ service iptables save
 
 装完后记得reboot重启下服务器确保生效。
 
-然后使用 [PAC](http://pac.itzmx.com/abc.pac) 右键另存为 PAC 文件后修改其中的IP地址为你的服务器IP即可。
-
-注意服务器DNS修改成8.8.8.8（配置文件目前强制指定了DNS，可以无需修改）：http://bbs.itzmx.com/thread-6353-1-1.html
-
-搭配锐速，网页打开速度翻十倍，效果更加：http://bbs.itzmx.com/thread-7220-1-1.html
+然后使用 [PAC](http://pac.itzmx.com/abc.pac) 右键另存为 PAC 文件后修改其中的server01.pac.itzmx.com为你的服务器IP即可。
 
 转载注明出处：http://bbs.itzmx.com/thread-8815-1-1.html
 
@@ -87,6 +89,5 @@ service iptables save
 赠送的20刀期限30天，注意使用。
 注意点击小尾巴，才能享受到优惠哦 
 
-Ubuntu 可以直接使用，centos 现在只需要清理系统防火墙规则即可使用。
 
 捐赠：http://pac.itzmx.com/donate/index.html
