@@ -3,6 +3,8 @@
 var proxy = "PROXY server01.pac.itzmx.com:25;";
 
 var domains = {
+  "messenger.com": 1,
+  "tumblr.com": 1,
   "share.dmhy.org": 1,
   "archeage.jp": 1,
   "blogspot.jp": 1,
