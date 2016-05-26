@@ -18,17 +18,17 @@ GFW 封锁了 HTTP/Socks5 代理，HTTP 代理是关键词过滤，Socks5 代理
 在 25 端口搭建 http/https 代理。
 
 
-Ubuntu（需要一行一行复制安装）:
+Ubuntu 16.04 x64（需要一行一行复制安装，默认密码admin123）:
 -------
 ``` markdown
 apt-get -y install squid
-curl http://github.itzmx.com/1265578519/PAC/master/squid/ubuntu-squid.conf > /etc/squid3/squid.conf
-echo "root:W10fM8VWO04aM" >> /etc/squid/passwd
+curl http://github.itzmx.com/1265578519/PAC/master/squid/ubuntu-squid.conf > /etc/squid/squid.conf
+echo "root:ssbiY3prCJLxU" >> /etc/squid/passwd
 mkdir -p /var/cache/squid
 chmod -R 777 /var/cache/squid
-service squid3 stop
-squid3 -z
-service squid3 restart
+service squid stop
+squid -z
+service squid restart
 ```
 
 
