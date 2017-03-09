@@ -922,6 +922,7 @@ var domains = {
   "gunsamerica.com": 1, 
   "guomin.us": 1, 
   "gutteruncensored.com": 1, 
+  "gvt1.com": 1,
   "gyalwarinpoche.com": 1, 
   "gzm.tv": 1, 
   "gzone-anime.info": 1, 
@@ -2604,7 +2605,7 @@ var direct = 'DIRECT;';
 var hasOwnProperty = Object.hasOwnProperty;
 
 function FindProxyForURL(url, host) {
-    if (host == "www.haosou.com") {
+    if (host == "www.so.com") {
         return "PROXY 360.itzmx.com:80";
     }
 
