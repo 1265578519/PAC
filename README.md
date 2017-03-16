@@ -20,6 +20,7 @@ GFW 封锁了 HTTP/Socks5 代理，HTTP 代理是关键词过滤，Socks5 代理
 
 Ubuntu 16.10 x64（需要一行一行复制安装，默认密码admin123）:
 -------
+``` markdown
 apt-get -y install squid
 curl http://github.itzmx.com/1265578519/PAC/master/squid/ubuntu-squid.conf > /etc/squid/squid.conf
 echo "root:ssbiY3prCJLxU" >> /etc/squid/passwd
@@ -28,12 +29,13 @@ chmod -R 777 /var/cache/squid
 service squid stop
 squid -z
 service squid restart
-
+```
 
 
 
 CentOS 6.8 x64（推荐用此系统）:
 -------
+``` markdown
 setenforce 0
 ulimit -n 655350
 echo "* soft nofile 655350" >> /etc/security/limits.conf
@@ -73,7 +75,7 @@ iptables -t raw -X
 iptables -t raw -P PREROUTING ACCEPT
 iptables -t raw -P OUTPUT ACCEPT
 service iptables save
-
+```
 
 装完后记得reboot重启下服务器确保生效。
 
