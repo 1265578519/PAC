@@ -18,63 +18,20 @@ GFW 封锁了 HTTP/Socks5 代理，HTTP 代理是关键词过滤，Socks5 代理
 在 25 端口搭建 http/https 代理。
 
 
-Ubuntu 16.10 x64（需要一行一行复制安装，默认密码admin123）:
+Ubuntu 16.10 x64（默认密码admin123）:
 -------
-``` markdown
-apt-get -y install squid
-curl http://github.itzmx.com/1265578519/PAC/master/squid/ubuntu-squid.conf > /etc/squid/squid.conf
-echo "root:ssbiY3prCJLxU" >> /etc/squid/passwd
-mkdir -p /var/cache/squid
-chmod -R 777 /var/cache/squid
-service squid stop
-squid -z
-service squid restart
+``` bash
+url='https://raw.githubusercontent.com/cjmao/PAC/master/install-on-ubuntu.sh'
+curl -sL $url | sudo bash -
 ```
 
 
 
 CentOS 6.8 x64（推荐用此系统）:
 -------
-``` markdown
-setenforce 0
-ulimit -n 655350
-echo "* soft nofile 655350" >> /etc/security/limits.conf
-echo "* hard nofile 655350" >> /etc/security/limits.conf
-echo "alias net-pf-10 off" >> /etc/modprobe.d/dist.conf
-echo "alias ipv6 off" >> /etc/modprobe.d/dist.conf
-killall sendmail
-/etc/init.d/postfix stop
-chkconfig --level 2345 postfix off
-yum -y install squid wget
-wget http://github.itzmx.com/1265578519/PAC/master/squid/centos-squid.conf -O /etc/squid/squid.conf
-echo "root:W10fM8VWO04aM" >> /etc/squid/passwd
-mkdir -p /var/cache/squid
-chmod -R 777 /var/cache/squid
-squid -z
-service squid restart
-chkconfig --level 2345 squid on
-iptables -t nat -F
-iptables -t nat -X
-iptables -t nat -P PREROUTING ACCEPT
-iptables -t nat -P POSTROUTING ACCEPT
-iptables -t nat -P OUTPUT ACCEPT
-iptables -t mangle -F
-iptables -t mangle -X
-iptables -t mangle -P PREROUTING ACCEPT
-iptables -t mangle -P INPUT ACCEPT
-iptables -t mangle -P FORWARD ACCEPT
-iptables -t mangle -P OUTPUT ACCEPT
-iptables -t mangle -P POSTROUTING ACCEPT
-iptables -F
-iptables -X
-iptables -P FORWARD ACCEPT
-iptables -P INPUT ACCEPT
-iptables -P OUTPUT ACCEPT
-iptables -t raw -F
-iptables -t raw -X
-iptables -t raw -P PREROUTING ACCEPT
-iptables -t raw -P OUTPUT ACCEPT
-service iptables save
+``` bash
+url='https://raw.githubusercontent.com/cjmao/PAC/master/install-on-centos.sh'
+curl -sL $url | sudo bash -
 ```
 
 装完后记得reboot重启下服务器确保生效。
