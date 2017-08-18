@@ -21,7 +21,7 @@ GFW 封锁了 HTTP/Socks5 代理，HTTP 代理是关键词过滤，Socks5 代理
 Ubuntu 16.10 x64（默认密码admin123）:
 -------
 ``` bash
-url='https://raw.githubusercontent.com/cjmao/PAC/master/install-on-ubuntu.sh'
+url='https://raw.githubusercontent.com/1265578519/PAC/master/install-on-ubuntu.sh'
 curl -sL $url | sudo bash -
 ```
 
@@ -30,7 +30,7 @@ curl -sL $url | sudo bash -
 CentOS 6.8 x64（推荐用此系统）:
 -------
 ``` bash
-url='https://raw.githubusercontent.com/cjmao/PAC/master/install-on-centos.sh'
+url='https://raw.githubusercontent.com/1265578519/PAC/master/install-on-centos.sh'
 curl -sL $url | sudo bash -
 ```
 
